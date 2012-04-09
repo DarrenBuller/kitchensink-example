@@ -20,4 +20,14 @@
       </configuration>
    </container>
 
+    <container qualifier="openshift">
+        <configuration>
+            <property name="namespace">saucelabstest</property>
+            <property name="application">plugintest</property>
+            <property name="sshUserName">666025c10f294d6ea529042d8b94aa01</property>
+            <!-- Passphrase can be specified by defining the environment variable SSH_PASSPHRASE -->
+            <property name="login">piaross@gmail.com</property>
+        </configuration>
+    </container>
+
 </arquillian>

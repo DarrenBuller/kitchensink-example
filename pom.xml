@@ -145,6 +145,27 @@
          <scope>test</scope>               
       </dependency>
 
+       <dependency>
+           <groupId>org.seleniumhq.selenium</groupId>
+           <artifactId>selenium-java</artifactId>
+           <version>2.13.0</version>
+           <scope>test</scope>
+       </dependency>
+
+       <dependency>
+           <groupId>com.saucelabs.selenium</groupId>
+           <artifactId>sauce-ondemand-driver</artifactId>
+           <version>2.3</version>
+           <scope>test</scope>
+       </dependency>
+
+       <dependency>
+           <groupId>com.saucelabs.selenium</groupId>
+           <artifactId>selenium-client-factory</artifactId>
+           <version>2.3</version>
+           <scope>test</scope>
+       </dependency>
+
    </dependencies>
 
    <build>
@@ -233,6 +254,33 @@
             </dependency>
          </dependencies>
       </profile>
+
+       <profile>
+           <!-- An optional Arquillian testing profile that executes tests
+            in a remote OpenShift JBoss AS instance -->
+           <!-- Run with: mvn clean test -Parq-jbossas-openshift -->
+           <id>arq-jbossas-openshift</id>
+           <build>
+               <plugins>
+                   <plugin>
+                       <artifactId>maven-surefire-plugin</artifactId>
+                       <configuration>
+                           <systemPropertyVariables>
+                               <arquillian.launch>openshift</arquillian.launch>
+                           </systemPropertyVariables>
+                       </configuration>
+                   </plugin>
+               </plugins>
+           </build>
+           <dependencies>
+               <dependency>
+                   <groupId>org.jboss.arquillian.container</groupId>
+                   <artifactId>arquillian-openshift-express</artifactId>
+                   <version>1.0.0.Beta1</version>
+                   <scope>test</scope>
+               </dependency>
+           </dependencies>
+       </profile>
       
       <profile>
          <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
@@ -255,4 +303,11 @@
       </profile>
 
    </profiles>
+
+    <repositories>
+        <repository>
+            <id>saucelabs-repository</id>
+            <url>https://repository-saucelabs.forge.cloudbees.com/release</url>
+        </repository>
+    </repositories>
 </project>
