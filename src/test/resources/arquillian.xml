@@ -20,13 +20,15 @@
       </configuration>
    </container>
 
+    <!-- Example configuration for an OpenShift instance-->
+    <!-- Replace the values of the placeholders with the actual values for your OpenShift instance -->
     <container qualifier="openshift">
         <configuration>
-            <property name="namespace">saucelabstest</property>
-            <property name="application">plugintest</property>
-            <property name="sshUserName">666025c10f294d6ea529042d8b94aa01</property>
+            <property name="namespace">YOUR_OPENSHIFT_NAMESPACE</property>
+            <property name="application">YOUR_OPENSHIFT_APPLICATION</property>
+            <property name="sshUserName">YOUR_OPENSHIFT_UUID</property>
             <!-- Passphrase can be specified by defining the environment variable SSH_PASSPHRASE -->
-            <property name="login">piaross@gmail.com</property>
+            <property name="login">YOUR_OPENSHIFT_LOGIN</property>
         </configuration>
     </container>
 

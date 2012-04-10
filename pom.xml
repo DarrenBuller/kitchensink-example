@@ -145,6 +145,7 @@
          <scope>test</scope>               
       </dependency>
 
+       <!-- Dependencies required for Selenium testing using Sauce OnDemand-->
        <dependency>
            <groupId>org.seleniumhq.selenium</groupId>
            <artifactId>selenium-java</artifactId>
@@ -163,6 +164,13 @@
            <groupId>com.saucelabs.selenium</groupId>
            <artifactId>selenium-client-factory</artifactId>
            <version>2.3</version>
+           <scope>test</scope>
+       </dependency>
+
+       <dependency>
+           <groupId>com.saucelabs</groupId>
+           <artifactId>sauce-rest-api</artifactId>
+           <version>1.5</version>
            <scope>test</scope>
        </dependency>
 
