@@ -13,16 +13,32 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 /**
+ *
+ * This class demonstrates how to write a Selenium test to verify the behaviour of the JBoss Kitchen Sink application.
+ *
+ * The test uses the <a href="http://selenium-client-factory.infradna.com/">Selenium Client Factory</a> library to simplify configuring the test to run using
+ * <a href="http://saucelabs.com">Sauce OnDemand</a>.
+ *
  * @author Ross Rowe
  */
 public class MemberRegistrationWebDriverTest {
 
     private String startingURL;
 
+    /**
+     * Default value to be used for the SELENIUM_DRIVER environment variable.
+     */
     protected static final String DEFAULT_SAUCE_DRIVER = "sauce-ondemand:?max-duration=60&os=windows 2008&browser=firefox&browser-version=4.&username={0}&access-key={1}";
 
     private WebDriver webDriver;
 
+    /**
+     * Populates a new {@link WebDriver} instance. using the {@link com.saucelabs.selenium.client.factory.SeleniumFactory#createWebDriver()}
+     * helper method.
+     *
+     * @see <a href="http://selenium-client-factory.infradna.com/">Selenium Client Factory</a> documentation
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
 

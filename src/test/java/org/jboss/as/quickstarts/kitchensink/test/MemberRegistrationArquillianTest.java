@@ -22,7 +22,7 @@ import java.text.MessageFormat;
 import static org.junit.Assert.assertEquals;
 
 /**
- * This class demonstrates how to write a Selenium test using <a href="">Arquillian</a> to verify the behaviour of the
+ * This class demonstrates how to write a Selenium test using <a href="http://www.jboss.org/arquillian.html">Arquillian</a> to verify the behaviour of the
  * JBoss Kitchen Sink application.
  *
  * In order for Arquillian to perform a push to the OpenShift Git repository, the SSH_PASSPHRASE environment variable
