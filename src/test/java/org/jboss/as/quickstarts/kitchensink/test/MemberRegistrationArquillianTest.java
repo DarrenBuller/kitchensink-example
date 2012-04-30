@@ -31,7 +31,7 @@ import static org.junit.Assert.assertEquals;
  * @author Ross Rowe
  */
 @RunWith(Arquillian.class)
-public class MemberRegistrationIntegrationTest {
+public class MemberRegistrationArquillianTest {
 
     /**
      *
@@ -93,16 +93,6 @@ public class MemberRegistrationIntegrationTest {
         webDriver = SeleniumFactory.createWebDriver();
     }
 
-    /**
-     * Closes the webDriver instance.
-     *
-     */
-    @After
-    public void tearDown() {
-        webDriver.close();
-    }
-
-
     @Test
     public void verifyKitchenSink() throws Exception {
         //verify that the kitchen sink page is okay
@@ -135,6 +125,11 @@ public class MemberRegistrationIntegrationTest {
 
         //verify that an error is displayed
         assertEquals("size must be between 1 and 25", webDriver.findElement(By.cssSelector("span.invalid")).getText());
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        webDriver.quit();
     }
 
 }
